@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body style="background-color: lightgrey;">
+    <header style="color: black;padding: 10px;">
+        <nav>
+          <ul style="list-style: none;margin: 0;padding: 15px;display: flex;justify-content: space-between;background-color: gray;border-bottom: 1px solid #ccc;">
+            <li style="margin: 0 10px;"><a href="#" style="text-decoration: none;color: #333;font-weight: bold;">Home</a></li>
+            <li style="margin: 0 10px;"><a href="#" style="text-decoration: none;color: #333;font-weight: bold;">About</a></li>
+            <li style="margin: 0 10px;"><a href="#" style="text-decoration: none;color: #333;font-weight: bold;">Services</a></li>
+            <li style="margin: 0 10px;"><a href="#" style="text-decoration: none;color: #333;font-weight: bold;">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <br><br>
+      <h1 style="text-align: center
+      ;">Form Pemesanan Barang</h1>
+      <br><br>
+    <div class="container" style="display: grid;grid-template-columns: 1fr 1fr;">
+    <div class="left">    
+    <form method="post" action="THANKYOU.html">
+        <img id="imgpre" src="" alt="imgpre" width="400px" height="400px" style="display: block;">
+        <input type="file" name="foto" id="foto">
+    </div>
+    
+    <div class="kanan">
+        <label for="title">Title Here :</label>
+        <input type="text" name="title" id="title">
+        <br><br>
+        <label for="deskripsi">Description :</label>
+        <textarea name="deskripsi" id="deskripsi" maxlength="400" cols="50" rows="5"></textarea>
+        <br><br>
+        <label for="nomor_akun">Account Number :</label>
+        <input type="number" name="number" id="number">
+        <br><br>
+        <label for="bank">Bank :</label>
+        <select name="bank" id="bank">
+            <option value="BCA">BCA</option>
+            <option value="BNI">BNI</option>
+            <option value="BRI">BRI</option>
+        </select>
+        <br><br>
+        <label for="pemegangakun">Account Holder :</label>
+        <input type="text" name="pemegangakun" id="pemegangakun">
+        <br><br>
+        <label for="transaksi">Transaksi :</label>
+        <select name="transaksi" id="transaksi">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br><br>
+        <p style="margin-left: 70px;">*if the transaction is for 3 person,choose 3 from the drop down list</p>
+        <br><br>
+        <input type="checkbox" name="mobile" id="mobile" style="margin-left: 70px;">Send To Mobile phone
+        <br>
+        <input type="checkbox" name="sendemail" id="sendemail" style="margin-left: 70px;">Send To Email
+        <br><br>
+        <label for="nomorhp">Send to Mobile Phone :</label>
+        <input type="number" name="nomorhp" id="nomorhp">
+        <br><br>
+        <label for="email">Send to Email :</label>
+        <input type="email" name="email" id="email">
+        <br><br><br>
+        <input type="submit" value="Generate Nabr Link" style="margin-left: 70px;background-color: greenyellow;">
+    </div>
+
+
+        <script>const fileInput = document.getElementById('foto');
+        const previewImg = document.getElementById('imgpre');
+        
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+        
+                reader.onload = (e) => {
+                    imgpre.src = e.target.result;
+                };
+        
+                reader.readAsDataURL(file);
+            } else {
+                imgpre.src = "";
+            }
+        });
+    </script>
+
+
+    </form>
+    </div>
+</body>
+</html>
